@@ -8,7 +8,7 @@ import doacoesRouters from "./routes/doacoes.routes.js";
 import locaisRouters from "./routes/locais.routes.js";
 import campanhasRouters from "./routes/campanhas.routes.js";
 import routerCategoria from "./routes/categoria.routes.js";
-//import routerUser from "./routes/users.routes.js";
+import routerUser from "./routes/users.routes.js";
 
 //const { swaggerUi, swaggerDocs } = require('./swagger');
 const app = express();
@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 });
 
 // Rotas
-//app.use("/user",routerUser);
+app.use("/user",routerUser);
 app.use("/logs-alteracao",logDoacaoRoutes );
 app.use("/feedbacks", feedbackRoutes);
 app.use("/doacoes", doacoesRouters);
@@ -34,7 +34,7 @@ app.use("/categorias", routerCategoria);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 // Rotas
-//app.use("/user",routerUser);
+app.use("/user",routerUser);
 app.use('/campanha', campanhasRouters);
 app.use('/doacoes', doacoesRouters);
 app.use('/feedback', feedbackRoutes);
