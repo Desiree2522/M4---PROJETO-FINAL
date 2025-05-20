@@ -1,6 +1,5 @@
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { PrismaClient } from '@prisma/client'
+export const prisma = new PrismaClient()
 
 export async function getAllUsersService() {
   return prisma.usuario.findMany({
@@ -30,7 +29,6 @@ export async function getUserByIdService(id) {
       ativo: true,
       fotoUrl: true,
       doacoes: true,
-      campanhas: true
     }
   });
 }

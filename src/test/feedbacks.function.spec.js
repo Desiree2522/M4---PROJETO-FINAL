@@ -1,36 +1,42 @@
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+
 const {
-  createTestUser,
-  deleteUserById,
   createTestFeedback,
   deleteFeedbackById,
   deleteFeedbacksByUserId,
-    updateFeedback,
+  updateFeedback,
 } = require("./feedbacks.function.js");
-
-const { PrismaClient } = require ("@prisma/client");
-const prisma = new PrismaClient();
 
 describe("Funções de Feedback", () => {
   let user;
-  let feedback;
 
   beforeAll(async () => {
-    user = await createTestUser();
+    user = await prisma.usuario.create({
+      data: {
+        nome: "Usuário Feedback Teste",
+        email: `feedback_teste_${Date.now()}@mail.com`,
+        senha: "123456",
+        tipo: "DOADOR",
+      },
+    });
   });
 
   afterAll(async () => {
     await deleteFeedbacksByUserId(user.id);
-    await deleteUserById(user.id);
+    await prisma.usuario.delete({ where: { id: user.id } });
     await prisma.$disconnect();
   });
 
   test("Deve criar um feedback com sucesso", async () => {
-    feedback = await createTestFeedback(user.id, "Feedback de teste", 4);
+    const feedback = await createTestFeedback(user.id, "Feedback de teste", 4);
 
     expect(feedback).toHaveProperty("id");
     expect(feedback.mensagem).toBe("Feedback de teste");
     expect(feedback.nota).toBe(4);
     expect(feedback.usuarioId).toBe(user.id);
+
+    await deleteFeedbackById(feedback.id);
   });
 
   test("Não deve criar feedback com nota inválida", async () => {
@@ -55,38 +61,33 @@ describe("Funções de Feedback", () => {
     expect(feedback2).toHaveProperty("id");
     expect(feedback1.id).not.toBe(feedback2.id);
 
-     // Limpa feedbacks criados
     await deleteFeedbackById(feedback1.id);
     await deleteFeedbackById(feedback2.id);
   });
 
   test("Deve deletar o feedback criado", async () => {
-    // Cria um novo feedback para deletar
     const fb = await createTestFeedback(user.id, "Feedback para deletar", 2);
+    expect(fb).toHaveProperty("id");
+
     await deleteFeedbackById(fb.id);
 
-    // Verifica se feedback foi deletado
-    const found = await prisma.feedback.findUnique({
-      where: { id: fb.id },
-    });
-
+    const found = await prisma.feedback.findUnique({ where: { id: fb.id } });
     expect(found).toBeNull();
   });
 
   test("Deve atualizar o feedback criado", async () => {
-    // Cria um novo feedback para atualizar
     const fb = await createTestFeedback(user.id, "Feedback para atualizar", 3);
-    const updatedFeedback = await updateFeedback(fb.id, {
+    expect(fb).toHaveProperty("id");
+
+    const updated = await updateFeedback(fb.id, {
       mensagem: "Feedback atualizado",
       nota: 5,
     });
 
-    expect(updatedFeedback).toHaveProperty("id", fb.id);
-    expect(updatedFeedback).toHaveProperty("mensagem", "Feedback atualizado");
-    expect(updatedFeedback).toHaveProperty("nota", 5);
+    expect(updated).toHaveProperty("id", fb.id);
+    expect(updated.mensagem).toBe("Feedback atualizado");
+    expect(updated.nota).toBe(5);
 
-    // Limpa feedback criado
     await deleteFeedbackById(fb.id);
   });
 });
-

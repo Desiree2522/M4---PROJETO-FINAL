@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1747775294495" clover="3.2.0">
+  <project timestamp="1747775294495" name="All files">
+    <metrics statements="74" coveredstatements="73" conditionals="26" coveredconditionals="18" methods="34" coveredmethods="33" elements="134" coveredelements="124" complexity="0" loc="74" ncloc="74" packages="1" files="6" classes="6"/>
+    <file name="campanha.function.js" path="C:\Users\WINDOWS\M4---PROJETO-FINAL\src\test\campanha.function.js">
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+    </file>
+    <file name="categoria.function.js" path="C:\Users\WINDOWS\M4---PROJETO-FINAL\src\test\categoria.function.js">
+      <metrics statements="9" coveredstatements="8" conditionals="3" coveredconditionals="3" methods="6" coveredmethods="5"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="41" count="0" type="stmt"/>
+      <line num="44" count="1" type="stmt"/>
+    </file>
+    <file name="doacoes.fuction.js" path="C:\Users\WINDOWS\M4---PROJETO-FINAL\src\test\doacoes.fuction.js">
+      <metrics statements="12" coveredstatements="12" conditionals="5" coveredconditionals="0" methods="9" coveredmethods="9"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="39" count="1" type="stmt"/>
+      <line num="59" count="1" type="stmt"/>
+      <line num="75" count="2" type="stmt"/>
+      <line num="80" count="1" type="stmt"/>
+      <line num="88" count="1" type="stmt"/>
+      <line num="93" count="1" type="stmt"/>
+      <line num="96" count="1" type="stmt"/>
+    </file>
+    <file name="feedbacks.function.js" path="C:\Users\WINDOWS\M4---PROJETO-FINAL\src\test\feedbacks.function.js">
+      <metrics statements="13" coveredstatements="13" conditionals="12" coveredconditionals="10" methods="4" coveredmethods="4"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="7" count="10" type="cond" truecount="5" falsecount="0"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="10" count="8" type="cond" truecount="5" falsecount="0"/>
+      <line num="11" count="2" type="stmt"/>
+      <line num="13" count="6" type="stmt"/>
+      <line num="20" count="5" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="36" count="5" type="stmt"/>
+      <line num="43" count="1" type="stmt"/>
+      <line num="48" count="1" type="stmt"/>
+    </file>
+    <file name="locais.fuction.js" path="C:\Users\WINDOWS\M4---PROJETO-FINAL\src\test\locais.fuction.js">
+      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="11" count="3" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="21" count="2" type="stmt"/>
+      <line num="22" count="2" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="33" count="2" type="stmt"/>
+      <line num="34" count="2" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="40" count="1" type="stmt"/>
+    </file>
+    <file name="users.fuction.js" path="C:\Users\WINDOWS\M4---PROJETO-FINAL\src\test\users.fuction.js">
+      <metrics statements="20" coveredstatements="20" conditionals="6" coveredconditionals="5" methods="5" coveredmethods="5"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="8" count="3" type="stmt"/>
+      <line num="9" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="11" count="2" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="20" count="2" type="stmt"/>
+      <line num="25" count="3" type="stmt"/>
+      <line num="26" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="31" count="1" type="stmt"/>
+      <line num="36" count="2" type="stmt"/>
+      <line num="37" count="2" type="stmt"/>
+      <line num="41" count="1" type="stmt"/>
+      <line num="43" count="1" type="stmt"/>
+      <line num="49" count="3" type="stmt"/>
+      <line num="50" count="3" type="stmt"/>
+      <line num="53" count="2" type="stmt"/>
+      <line num="55" count="1" type="stmt"/>
+      <line num="59" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

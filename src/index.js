@@ -9,6 +9,7 @@ import locaisRouters from "./routes/locais.routes.js";
 import campanhasRouters from "./routes/campanhas.routes.js";
 import routerCategoria from "./routes/categoria.routes.js";
 import routerUser from "./routes/users.routes.js";
+import authRoutes from './routes/auth.routes.js';
 
 //const { swaggerUi, swaggerDocs } = require('./swagger');
 const app = express();
@@ -45,6 +46,11 @@ app.use("/logs-alteracao",logDoacaoRoutes );
 
 //app.use('/users', usersRoutes);
 
+app.use("/", routerUser);
+app.use('/auth', authRoutes);
+app.put('/test-put/:id', (req, res) => {
+  res.json({ message: `Rota PUT de teste acessada com ID: ${req.params.id}`, body: req.body });
+});
 
 // Inicialização do servidor
 const PORT = process.env.PORT || 8800;

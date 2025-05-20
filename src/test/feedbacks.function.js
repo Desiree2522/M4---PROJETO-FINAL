@@ -1,25 +1,6 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-// Função para criar um usuário de teste
-async function createTestUser() {
-  const user = await prisma.usuario.create({
-    data: {
-      nome: "Usuário Teste",
-      email: `teste${Date.now()}@example.com`,
-      senha: "123456",
-      tipo: "DONATARIO",
-    },
-  });
-  return user;
-}
-
-// Função para deletar um usuário por id
-async function deleteUserById(id) {
-  await prisma.usuario.delete({
-    where: { id },
-  });
-}
 
 // Função para criar um feedback de teste
 async function createTestFeedback(usuarioId, mensagem = "Feedback teste", nota = 5) {
@@ -65,8 +46,7 @@ async function deleteFeedbacksByUserId(usuarioId) {
 }
 
 module.exports = {
-  createTestUser,
-  deleteUserById,
+  
   createTestFeedback,
   deleteFeedbackById,
   deleteFeedbacksByUserId,
